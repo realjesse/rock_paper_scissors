@@ -1,3 +1,6 @@
+var humanScore = 0;
+var computerScore = 0;
+
 function getRandomInt() {
     /* Will return a random int between the values of 0 and 2 */
     return Math.floor(Math.random() * 3);
@@ -36,6 +39,8 @@ function getHumanChoice() {
         }
     }
 }
+
+
 
 /*
 Play a game, with 5 rounds
