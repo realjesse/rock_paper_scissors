@@ -1,3 +1,7 @@
+function getRandomInt() {
+    return Math.floor(Math.random() * 3);
+}
+
 /*
 Play a game, with 5 rounds
 Get computer choice
