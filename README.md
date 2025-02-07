@@ -1,1 +1,1 @@
-# rock_paper_scissors
+A simple JavaScript project from The Odin Project!
