@@ -23,6 +23,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
+    /* Loop to validate the data */
     while (true) {
         var choice = prompt("Rock, paper, or scissors?").toLowerCase();
 
