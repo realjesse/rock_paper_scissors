@@ -19,6 +19,22 @@ function getComputerChoice() {
     }
 }
 
+function getHumanChoice() {
+    var choice = prompt("Rock, paper, or scissors?").toLowerCase();
+
+    if (choice === "rock") {
+        return "rock";
+    }
+
+    else if (choice === "paper") {
+        return "paper";
+    }
+
+    else if (choice === "scissors") {
+        return "scissors";
+    }
+}
+
 /*
 Play a game, with 5 rounds
 Get computer choice
