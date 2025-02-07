@@ -20,18 +20,20 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    var choice = prompt("Rock, paper, or scissors?").toLowerCase();
+    while (true) {
+        var choice = prompt("Rock, paper, or scissors?").toLowerCase();
 
-    if (choice === "rock") {
-        return "rock";
-    }
-
-    else if (choice === "paper") {
-        return "paper";
-    }
-
-    else if (choice === "scissors") {
-        return "scissors";
+        if (choice === "rock") {
+            return "rock";
+        }
+    
+        else if (choice === "paper") {
+            return "paper";
+        }
+    
+        else if (choice === "scissors") {
+            return "scissors";
+        }
     }
 }
 
