@@ -42,7 +42,60 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    pass
+
+    /* If human chooses rock, compare with computer */
+    if (humanChoice == "rock") {
+
+        if (computerChoice == "rock") {
+            console.log("Tie! No winner.");
+        }
+
+        else if (computerChoice == "paper") {
+            console.log("You lose! Paper beats rock.");
+            computerScore += 1;
+        }
+
+        else {
+            console.log("You win! Rock beats scissors.");
+            humanScore += 1;
+        }
+    }
+
+    /* If human chooses paper, compare with computer */
+    else if (humanChoice == "paper") {
+
+        if (computerChoice == "rock") {
+            console.log("You win! Paper beats rock.");
+            humanScore += 1;
+        }
+
+        else if (computerChoice == "paper") {
+            console.log("Tie! No winner.");
+        }
+
+        else {
+            console.log("You lose! Scissors beats paper.");
+            computerScore += 1;
+        }
+    }
+
+    /* If human chooses scissors, compare with computer */
+    else {
+
+        if (computerChoice == "rock") {
+            console.log("You lose! Rock beats paper.");
+            computerScore += 1;
+        }
+
+        else if (computerChoice == "paper") {
+            console.log("You win! Scissors beats paper.");
+            humanScore += 1;
+        }
+
+        else {
+            console.log("Tie! No winner.");
+        }
+    }
 }
 
 
