@@ -83,7 +83,7 @@ function playRound(humanChoice, computerChoice) {
     else {
 
         if (computerChoice == "rock") {
-            console.log("You lose! Rock beats paper.");
+            console.log("You lose! Rock beats scissors.");
             computerScore += 1;
         }
 
@@ -98,7 +98,10 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
+playRound(humanSelection, computerSelection);
 
 /*
 Play a game, with 5 rounds
