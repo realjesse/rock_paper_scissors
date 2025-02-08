@@ -1,6 +1,3 @@
-var humanScore = 0;
-var computerScore = 0;
-
 function getRandomInt() {
     /* Will return a random int between the values of 0 and 2 */
     return Math.floor(Math.random() * 3);
@@ -98,10 +95,18 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+/* unfinished */
+function playGame() {
+    var humanScore = 0;
+    var computerScore = 0;
+    for (let i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+}
 
-playRound(humanSelection, computerSelection);
+playGame();
 
 /*
 Play a game, with 5 rounds
