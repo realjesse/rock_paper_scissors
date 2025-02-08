@@ -38,7 +38,7 @@ function getHumanChoice() {
     }
 }
 
-function playRound(humanChoice, computerChoice) {
+function playRound(humanChoice, computerChoice, humanScore, computerScore) {
 
     /* If human chooses rock, compare with computer */
     if (humanChoice == "rock") {
@@ -93,17 +93,21 @@ function playRound(humanChoice, computerChoice) {
             console.log("Tie! No winner.");
         }
     }
+
+    return [humanScore, computerScore];
 }
 
 /* unfinished */
 function playGame() {
-    var humanScore = 0;
-    var computerScore = 0;
+    let humanScore = 0;
+    let computerScore = 0;
     for (let i = 0; i < 5; i++) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
+        const [humanScore, computerScore] = playRound(humanSelection, computerSelection);
     }
+
+    console.log(`Human score: ${humanScore}.  Computer score: ${computerScore}`);
 }
 
 playGame();
