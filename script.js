@@ -38,23 +38,26 @@ function getHumanChoice() {
     }
 }
 
-function playRound(humanChoice, computerChoice, humanScore, computerScore) {
+function playRound(humanChoice, computerChoice) {
+
+    let winner;
 
     /* If human chooses rock, compare with computer */
     if (humanChoice == "rock") {
 
         if (computerChoice == "rock") {
             console.log("Tie! No winner.");
+            winner = "none";
         }
 
         else if (computerChoice == "paper") {
             console.log("You lose! Paper beats rock.");
-            computerScore += 1;
+            winner = "computer";
         }
 
         else {
             console.log("You win! Rock beats scissors.");
-            humanScore += 1;
+            winner = "human";
         }
     }
 
@@ -63,16 +66,17 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
 
         if (computerChoice == "rock") {
             console.log("You win! Paper beats rock.");
-            humanScore += 1;
+            winner = "human";
         }
 
         else if (computerChoice == "paper") {
             console.log("Tie! No winner.");
+            winner = "none";
         }
 
         else {
             console.log("You lose! Scissors beats paper.");
-            computerScore += 1;
+            winner = "computer";
         }
     }
 
@@ -81,20 +85,21 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
 
         if (computerChoice == "rock") {
             console.log("You lose! Rock beats scissors.");
-            computerScore += 1;
+            winner = "computer";
         }
 
         else if (computerChoice == "paper") {
             console.log("You win! Scissors beats paper.");
-            humanScore += 1;
+            winner = "human";
         }
 
         else {
             console.log("Tie! No winner.");
+            winner = "none";
         }
     }
 
-    return [humanScore, computerScore];
+    return winner;
 }
 
 /* unfinished */
@@ -102,9 +107,17 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     for (let i = 0; i < 5; i++) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        const [humanScore, computerScore] = playRound(humanSelection, computerSelection);
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        let winner = playRound(humanSelection, computerSelection);
+
+        if (winner === "human") {
+            humanScore += 1;
+        }
+
+        else if (winner === "computer") {
+            computerScore += 1;
+        }
     }
 
     console.log(`Human score: ${humanScore}.  Computer score: ${computerScore}`);
